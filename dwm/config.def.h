@@ -83,6 +83,7 @@ static const char *volumedown[] = { "amixer", "-q", "sset", "Master", "5%-", "un
 static const char *inclight[] = { "light", "-A", "10", NULL};
 static const char *declight[] = { "light", "-U", "10", NULL};
 static const char *screenshot[] = { "flameshot", "gui", NULL};
+static const char *screenlock[] = { "slock", NULL};
 
 #include "movestack.c"
 static const Key keys[] = {
@@ -94,6 +95,7 @@ static const Key keys[] = {
 	{ 0, 				XF86XK_MonBrightnessDown,  spawn,	{.v = declight} },
 	{ 0,			        XK_Print,  spawn,	   {.v = screenshot} },
 	{ Mod1Mask|ShiftMask,		XK_a,      spawn,	   {.v = screenshot} },
+	{ MODKEY|ShiftMask,		XK_l,      spawn,	   {.v = screenlock} },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = fsearchcmd } },
