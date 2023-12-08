@@ -76,7 +76,7 @@ static const char *fsearchcmd[]  = { "fsearch", NULL };
 
 static const char scratchpadname[] = "scratchpad";
 /* static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x27", NULL }; */
-static const char *scratchpadcmd[] = { "alacritty", "-t", scratchpadname, "-class", "floatingTerminal", NULL };
+static const char *scratchpadcmd[] = { "alacritty", "-t", scratchpadname, "--class", "floatingTerminal" };
 static const char *volumetoggle[] = { "/home/xiaosu/suckless/dwm/scripts/volumetoggle.sh", NULL };
 static const char *volumeup[] = { "amixer", "-q", "sset", "Master", "5%+", "unmute", NULL};
 static const char *volumedown[] = { "amixer", "-q", "sset", "Master", "5%-", "unmute", NULL};
