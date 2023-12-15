@@ -72,18 +72,18 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 //static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *dmenucmd[] = { "rofi", "-combi-modi", "window,drun,run,ssh", "-font", "hack 22", "-show", "combi", "-icon-theme", "Papirus","-show-icons", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
-static const char *fsearchcmd[]  = { "fsearch", NULL };
+static const char *fsearchcmd[]  = { "fsearch", "gui", NULL };
 
 static const char scratchpadname[] = "scratchpad";
-/* static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x27", NULL }; */
+//static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x27", NULL }; 
 static const char *scratchpadcmd[] = { "alacritty", "-t", scratchpadname, "--class", "floatingTerminal" };
 static const char *volumetoggle[] = { "/home/xiaosu/suckless/dwm/scripts/volumetoggle.sh", NULL };
-static const char *volumeup[] = { "amixer", "-q", "sset", "Master", "5%+", "unmute", NULL};
-static const char *volumedown[] = { "amixer", "-q", "sset", "Master", "5%-", "unmute", NULL};
-static const char *inclight[] = { "light", "-A", "10", NULL};
-static const char *declight[] = { "light", "-U", "10", NULL};
-static const char *screenshot[] = { "flameshot", "gui", NULL};
-static const char *screenlock[] = { "slock", NULL};
+static const char *volumeup[] = { "amixer", "-q", "sset", "Master", "5%+", "unmute", NULL };
+static const char *volumedown[] = { "amixer", "-q", "sset", "Master", "5%-", "unmute", NULL };
+static const char *inclight[] = { "light", "-A", "10", NULL };
+static const char *declight[] = { "light", "-U", "10", NULL };
+static const char *screenshot[] = { "flameshot", "gui", NULL };
+static const char *screenlock[] = { "slock", NULL };
 
 #include "movestack.c"
 static const Key keys[] = {
@@ -96,10 +96,10 @@ static const Key keys[] = {
 	{ 0,			        XK_Print,  spawn,	   {.v = screenshot} },
 	{ Mod1Mask|ShiftMask,		XK_a,      spawn,	   {.v = screenshot} },
 	{ MODKEY|ShiftMask,		XK_l,      spawn,	   {.v = screenlock} },
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = fsearchcmd } },
-	{ MODKEY,			XK_grave,  togglescratch,  {.v = scratchpadcmd } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd} },
+	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd} },
+	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = fsearchcmd} },
+	{ MODKEY,			XK_grave,  togglescratch,  {.v = scratchpadcmd} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
